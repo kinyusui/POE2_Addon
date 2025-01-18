@@ -1,0 +1,8 @@
+Electron needs js files.
+Build js files from ts files.
+    In one terminal run:
+        npm run build
+Now you can use regular electron commands for start and packaging.
+    In separate terminal you can run either:
+        npm run start.
+        npm run package.

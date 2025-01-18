@@ -1,0 +1,30 @@
+{
+    "main": "dist/appStart.js",
+    "version": "1.0.0",
+    "scripts": {
+        "build": "tsc --watch",
+        "unwatched_start": "electron ./dist/appStart.js",
+        "start": "nodemon --exec electron ./dist/appStart.js",
+        "package": "npm run build && electron-builder"
+    },
+    "devDependencies": {
+        "@types/electron": "^1.6.12",
+        "@types/node": "^22.10.7",
+        "electron": "^34.0.0",
+        "electron-builder": "^25.1.8",
+        "nodemon": "^3.1.9",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.7.3"
+    },
+    "build": {
+        "appId": "com.kai.poe2Addon",
+        "files": [
+            "dist/**/*",
+            "node_modules/**/*",
+            "package.json"
+        ],
+        "directories": {
+            "output": "release"
+        }
+    }
+}
