@@ -1,0 +1,27 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "chrome",
+        "request": "launch",
+        "name": "Debug Chrome Extension",
+        "runtimeArgs": [
+          "--load-extension=${workspaceFolder}/chrome_extension", // Path to your extension's build output
+        //   "--disable-extensions-except=${workspaceFolder}/dist", // Only load your extension
+          "--remote-debugging-port=9222" // Enables remote debugging
+        ],
+        "webRoot": "${workspaceFolder}/src", // Adjust to your source folder
+        "url": "chrome://extensions/",
+        "sourceMaps": true // Enable source map support
+      },
+      {
+        "type": "chrome",
+        "request": "attach",
+        "name": "Attach to Chrome Extension",
+        "port": 9222, // The debugging port opened by Chrome
+        "webRoot": "${workspaceFolder}/src",
+        "sourceMaps": true
+      }
+    ]
+  }
+  
