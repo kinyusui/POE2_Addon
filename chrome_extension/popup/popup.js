@@ -14,5 +14,9 @@ const searchClipboard = async () => {
   });
 }
 
-document.getElementById("search").addEventListener("click", searchClipboard);
+function addSearchListener() {
+  document.getElementById("search").addEventListener("click", searchClipboard);
+}
+addSearchListener();
+
 
