@@ -51,9 +51,42 @@ export class Piloter {
     document.querySelector(resetSelector).click();
   }
 
+  static getSiteStatTemplateToElement() {
+    const siteStatTemplateToEle = {};
+    const statTemplatesSelector = `#trade > div.top > div > div.search-bar.search-advanced > div > div.search-advanced-pane.brown > div.filter-group.expanded > div.filter-group-body > div > span > div > div.multiselect__content-wrapper > ul > li > span > span`;
+    const statTemplatesEle = [...document.querySelectorAll(statTemplatesSelector)];
+    statTemplatesEle.forEach((ele) => {
+      const template = ele.innerText;
+      if (siteStatTemplateToEle[template] === undefined) {
+        siteStatTemplateToEle[template] = ele;
+      }
+    });
+    return siteStatTemplateToEle;
+  }
+
   setStatFilters(itemInfo) {
     Piloter.resetAffixes();
     const stats = DoStatFilters.getStats(itemInfo);
-    console.log(stats);
+    const siteStatTemplateToEle = Piloter.getSiteStatTemplateToElement();
+    stats.map((templateValuePair) => {
+      const { template, values } = templateValuePair;
+      const optionEle = siteStatTemplateToEle[template];
+      if (optionEle) {
+        console.log("clicked");
+        optionEle.click();
+      }
+    });
+    console.log(`
+      ${JSON.stringify(stats)}
+      ${JSON.stringify(siteStatTemplateToEle)}`);
+    /*
+    fix parentheses traits not found in stat to ele dict.
+
+    dict of stat templates to element.
+    get list of matching ones.
+    input each.
+      select.
+      fill in values.
+    */
   }
 }

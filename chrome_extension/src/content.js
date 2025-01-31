@@ -5,7 +5,7 @@ console.log("Content script injected!");
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.type === "SEARCH") {
-    const itemInfo = message.payload;
+    const itemInfo = message.payload.replaceAll("\r", "");
     console.log("Received message:", itemInfo);
     const piloter = new Piloter();
     piloter.setStatFilters(itemInfo);
