@@ -1,4 +1,4 @@
-Item Class: Foci
+var focus = `Item Class: Foci
 Rarity: Rare
 Morbid Spell
 Expert Plumed Focus
@@ -18,11 +18,9 @@ Item Level: 83
 +170 to maximum Mana
 +40% to Fire Resistance
 +40% to Cold Resistance
-+41% to Lightning Resistance
++41% to Lightning Resistance`;
 
-
-
-Item Class: Socketable
+const soulCore = `Item Class: Socketable
 Rarity: Currency
 Soul Core of Cholotl
 --------
@@ -31,11 +29,9 @@ Stack Size: 1/10
 Martial Weapon: Convert 20% of Requirements to Dexterity
 Armour: Convert 20% of Requirements to Dexterity
 --------
-Place into an empty Rune Socket in a Martial Weapon or Armour to apply its effect to that item. Once socketed it cannot be removed.
+Place into an empty Rune Socket in a Martial Weapon or Armour to apply its effect to that item. Once socketed it cannot be removed.`;
 
-
-
-Rarity: Currency
+const gem = `Rarity: Currency
 Uncut Support Gem
 --------
 Level: 3
@@ -44,11 +40,9 @@ Item Level: 3
 --------
 Creates a Support Gem up to level 3
 --------
-Right Click to engrave a Support Gem.
+Right Click to engrave a Support Gem.`;
 
-
-
-Item Class: Inscribed Ultimatum
+const ultimatum = `Item Class: Inscribed Ultimatum
 Rarity: Currency
 Inscribed Ultimatum
 --------
@@ -61,11 +55,9 @@ Mortals spend their lives wondering which
 fate shall be theirs. Chaos takes amusement
 in knowing the answer: all of them.
 --------
-Take this item to The Temple of Chaos to participate in a Trial of Chaos.
+Take this item to The Temple of Chaos to participate in a Trial of Chaos.`;
 
-
-
-Item Class: Helmets
+const helmets = `Item Class: Helmets
 Rarity: Rare
 Eagle Brow
 Advanced Feathered Tiara
@@ -83,11 +75,9 @@ Item Level: 82
 +19 to maximum Life
 +29 to Intelligence
 +20% to Lightning Resistance
-+23% to Chaos Resistance
++23% to Chaos Resistance`;
 
-
-
-Item Class: Body Armours
+const bodyArmour = `Item Class: Body Armours
 Rarity: Rare
 Carrion Veil
 Expert Pathfinder Coat
@@ -111,10 +101,9 @@ Item Level: 79
 135% increased Evasion Rating
 +34% to Cold Resistance
 18.3 Life Regeneration per second
-52% reduced Ignite Duration on you
+52% reduced Ignite Duration on you`;
 
-
-Item Class: Gloves
+const gloves = `Item Class: Gloves
 Rarity: Rare
 Dusk Caress
 Expert Gauze Wraps
@@ -131,10 +120,9 @@ Item Level: 70
 --------
 47% increased Evasion and Energy Shield
 +12 to maximum Mana
-+25% to Fire Resistance
++25% to Fire Resistance`;
 
-
-Item Class: Boots
+const boots = `Item Class: Boots
 Rarity: Rare
 Eagle Goad
 Expert Feathered Sandals
@@ -152,10 +140,9 @@ Item Level: 84
 39% increased Energy Shield
 30% reduced Attribute Requirements
 +42% to Cold Resistance
-37% reduced Shock duration on you
+37% reduced Shock duration on you`;
 
-
-Item Class: Rings
+const rings = `Item Class: Rings
 Rarity: Unique
 Polcirkeln
 Sapphire Ring
@@ -175,11 +162,9 @@ Enemies Chilled by your Hits can be Shattered as though Frozen
 I rule the north
 A legacy earned
 Time and time again
-Sing Meginord's song!
+Sing Meginord's song!`;
 
-
-
-Item Class: Amulets
+const amulets = `Item Class: Amulets
 Rarity: Rare
 Beast Medallion
 Gold Amulet
@@ -200,11 +185,9 @@ Item Level: 82
 +40% to Fire Resistance
 +35% to Lightning Resistance
 --------
-Corrupted
+Corrupted`;
 
-
-
-Item Class: Rings
+const rings1 = `Item Class: Rings
 Rarity: Rare
 Gale Hold
 Ruby Ring
@@ -221,11 +204,9 @@ Adds 3 to 44 Lightning damage to Attacks
 +93 to maximum Mana
 22% increased Rarity of Items found
 +17% to Fire Resistance
-+26% to Lightning Resistance
++26% to Lightning Resistance`;
 
-
-
-Item Class: Belts
+const belts = `Item Class: Belts
 Rarity: Rare
 Dragon Harness
 Ornate Belt
@@ -248,11 +229,9 @@ Item Level: 77
 +38% to Cold Resistance
 +28% to Lightning Resistance
 --------
-Corrupted
+Corrupted`;
 
-
-
-Item Class: Quarterstaves
+const quarterstaff = `Item Class: Quarterstaves
 Rarity: Rare
 Damnation Roar
 Advanced Barrier Quarterstaff
@@ -280,4 +259,20 @@ Adds 39 to 75 Physical Damage
 +121 to Accuracy Rating
 +2 to Level of all Melee Skills
 +8 to Dexterity
-Gain 9 Life per Enemy Killed
+Gain 9 Life per Enemy Killed`;
+
+export const templates = {
+  focus,
+  soulCore,
+  gem,
+  ultimatum,
+  helmets,
+  bodyArmour,
+  gloves,
+  boots,
+  belts,
+  rings,
+  rings1,
+  amulets,
+  quarterstaff,
+};

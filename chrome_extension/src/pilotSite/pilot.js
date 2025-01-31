@@ -1,5 +1,5 @@
-import { getMapOfFields } from "../selectorScraping/scrape";
-import { Formatter } from "./formatItemInfo";
+import { getMapOfFields } from "../selectorScraping/scrape.js";
+import { DoStatFilters, DoFilters } from "./formatItemInfo.js";
 
 function setInput(inputElement, desiredValue) {
   inputElement.value = desiredValue; // Change the value
@@ -22,7 +22,7 @@ export class Piloter {
         containersIndexMapping,
       },
     };
-    this.formatter = new Formatter(containersIndexMapping);
+    this.doFilters = new DoFilters(containersIndexMapping);
   }
 
   getMinMaxFields = (inputContainer) => {
@@ -43,7 +43,17 @@ export class Piloter {
     const targetInputContainer = inputContainers[indexOfTarget];
 
     const { minField, maxField } = this.getMinMaxFields(targetInputContainer);
-    console.log(minField, fieldName, value);
     setInput(minField, value);
   };
+
+  static resetAffixes() {
+    const resetSelector = `#trade > div.top > div > div.search-bar.search-advanced > div > div.search-advanced-pane.brown > div.filter-group.expanded > div.filter-group-header > div > span:nth-child(3) > button`;
+    document.querySelector(resetSelector).click();
+  }
+
+  setStatFilters(itemInfo) {
+    Piloter.resetAffixes();
+    const stats = DoStatFilters.getStats(itemInfo);
+    console.log(stats);
+  }
 }
